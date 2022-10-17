@@ -1,17 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿var start = DateTime.Now;
 
-
-
-
-
-
-// ######################################################################################################
-
-
-
-int[] decimais = new int[]          // lista de numeros
-{255,254,172,164};
+// int[] decimais = new int[6880200];           //pegando tamanho de uma imagem
+int[] decimais = new int[]
+{40,60,74,22,73,89,182,124,207,242};            //Usando tamanho de uma lista
 
 int[] comp = new int[(decimais.Length)/2];
 
@@ -20,17 +11,6 @@ for (int i = 0; i < decimais.Length; i+=2)
 {
     int numComp = (convert(decimais[i],decimais[i+1]));
     comp[i/2] = numComp;
-}
-
-
-foreach(var x in decimais)
-{
-    Console.Write($"{x} ");
-}
-Console.Write($"\n");
-foreach(var x in comp)
-{
-    Console.Write($"{x} ");
 }
 
 int convert(int a, int b)
@@ -43,6 +23,21 @@ int convert(int a, int b)
     // Console.Write($"{c}, ");
     return c;
 }
+
+
+// foreach(var x in decimais)
+// {
+//     Console.Write($"{x} ");
+// }
+
+// Console.Write("\n");
+
+// foreach(var x in comp)
+// {
+//     Console.Write($"{x} ");
+// }
+
+
 
 
 (int,int) descomprime(int a)
@@ -66,8 +61,11 @@ for (int i=0; i<comp.Length; i++)
     numDescomp[(i*2)+1] = descomprime(comp[i]).Item2;
 }
 
-foreach(var x in numDescomp)
-{
-    Console.Write($"{x} ");
-}
-
+// Console.Write("\n");
+// foreach(var x in numDescomp)
+// {
+//     Console.Write($"{x} ");
+// }
+var end = DateTime.Now;
+var timeDiff = (end - start).TotalMilliseconds;
+Console.Write($"\n{timeDiff} ");
