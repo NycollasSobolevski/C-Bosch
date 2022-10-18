@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "revisaoAula3/1.0.0": {
+        "runtime": {
+          "revisaoAula3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "revisaoAula3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
