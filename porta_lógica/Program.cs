@@ -1,59 +1,169 @@
-﻿AndGate a = new AndGate();
-// NotGate b = new NotGate();
-Console.WriteLine(a.Function(true,true));
+﻿using System;
 
+Entrada a = new Entrada();
+Entrada b = new Entrada();
+Entrada c = new Entrada();
 
+EPorta e = new EPorta();
+OuPorta ou = new OuPorta();
+NotPorta nao = new NotPorta();
+ 
 
-public abstract class Gate
+a.Connect(e);
+b.Connect(e);
+e.Connect(ou);
+c.Connect(ou);
+ou.Connect(nao);
+
+a.isOn = true;
+
+b.isOn = false;
+
+c.isOn = false;
+
+Console.WriteLine(nao.Saida);
+
+public abstract class Component
 {
-    public bool inputA {get;set;}
-    public bool inputB {get;set;}
-    public bool Output {get;set;}
+    public abstract bool Saida { get; }
+    public abstract void Update();
 
-    public abstract bool Function(bool inputA, bool inputB);
-    // public abstract bool Send(Gate Target);
-    // public abstract bool Target(bool entrada);
+    protected Component Next {get; private set;}
 
-}
-
-
-
-public class AndGate : Gate
-{
-    public override bool Function(bool inputA,bool inputB)
+    public void Connect (Component component)
     {
-        return inputA && inputB;
+        this.Next = component;
+        this.Next.ConnectInput(this);
     }
 
+    public virtual void ConnectInput(Component component) { }
 }
 
 
+public class Entrada : Component
+{
+    private bool ison = false;
+    public bool isOn
+    {
+        get
+        {
+            return ison;
+        }
+
+        set
+        {
+            this.ison = value;
+            Update();
+        }
+    }
+
+    public override bool Saida
+    {
+        get
+        {
+            return ison;
+        }
+    }
+
+    public override void Update()
+    {
+        this.Next.Update();
+    }
+}
+
+public class EPorta : Component
+{
+    private Component inputA = null;
+    private Component inputB = null;
+    private bool value = false;
+
+    public override bool Saida
+    {
+        get
+        {
+            return value;
+        }
+    }
+
+    public override void Update()
+    {
+        bool newValue = (inputA?.Saida ?? false) && (inputB?.Saida ?? false);
+        if (newValue == value)
+            return;
+        
+        value = newValue;
+        this.Next?.Update();
+    }
+
+    public override void ConnectInput(Component component)
+    {
+        if (inputA == null)
+            inputA = component;
+        else if (inputB == null)
+            inputB = component;
+    }
+}
+
+public class OuPorta : Component
+{
+    private Component inputA = null;
+    private Component inputB = null;
+    private bool value = false;
+
+    public override bool Saida
+    {
+        get
+        {
+            return value;
+        }
+    }
+
+    public override void Update()
+    {
+        bool newValue = (inputA?.Saida ?? false) || (inputB?.Saida ?? false);
+        if (newValue == value)
+            return;
+        
+        value = newValue;
+        this.Next?.Update();
+    }
+
+    public override void ConnectInput(Component component)
+    {
+        if (inputA == null)
+            inputA = component;
+        else if (inputB == null)
+            inputB = component;
+    }
+}
 
 
-// public class OrGate : Gate
-// {
-//     public override bool Function(bool inputA,bool inputB)
-//     {
-//         return inputA || inputB;
-//     }
+public class NotPorta : Component
+{
+    private Component inputA = null;
+    private bool value = true;
 
-// }
+    public override bool Saida
+    {
+        get
+        {
+            return value;
+        }
+    }
 
+    public override void Update()
+    {
+        bool newValue = !(inputA?.Saida ?? false);
+        if (newValue == value)
+            return;
+        
+        value = newValue;
+        this.Next?.Update();
+    }
 
-
-// public class NotGate : Gate
-// {
-//     public override bool Function(bool inputA,bool inputB)
-//     {
-//         if (inputA)
-//         {
-//             return false;
-//         }
-//         else
-//         {
-//             return true;
-//         }
-//     }
-
-// }
-
+    public override void ConnectInput(Component component)
+    {
+        if (inputA == null)
+            inputA = component;
+    }
+}
