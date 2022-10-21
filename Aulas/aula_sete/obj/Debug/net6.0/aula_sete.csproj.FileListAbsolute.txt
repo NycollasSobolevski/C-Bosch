@@ -1,0 +1,15 @@
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\bin\Debug\net6.0\aula_sete.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\bin\Debug\net6.0\aula_sete.deps.json
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\bin\Debug\net6.0\aula_sete.runtimeconfig.json
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\bin\Debug\net6.0\aula_sete.dll
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\bin\Debug\net6.0\aula_sete.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.csproj.AssemblyReference.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.GeneratedMSBuildEditorConfig.editorconfig
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.AssemblyInfoInputs.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.AssemblyInfo.cs
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.csproj.CoreCompileInputs.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.dll
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\refint\aula_sete.dll
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\aula_sete.genruntimeconfig.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\14 - Desenvolvimento de sistemas 2022\Nycollas W. Sobolevski\C#\Aulas\aula_sete\obj\Debug\net6.0\ref\aula_sete.dll
