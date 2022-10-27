@@ -4,23 +4,32 @@ mundo.WorldReady();
 public class World
 {
     Machine01 maquina1 = new Machine01();
-    //Machine [] MachineList = new Machine[]
+    Machine02 maquina2 = new Machine02();
+    Machine03 maquina3 = new Machine03();
+
+    List<Machine> maquinas = new List<Machine>();
+    
 
     bool running = true;
-    Machine01 maquina = new Machine01();
     public float Money;
     public float Gerando = 1;
-
+    int delay = 1500;
     public void WorldReady()
     {
+        maquinas.Add(maquina1);
+        maquinas.Add(maquina2);
+        maquinas.Add(maquina3);
+        
         while(running)
         {
             Console.Clear();
             Console.WriteLine($"Dinheiro = {Money}");
-            Console.WriteLine($"{maquina1.Name} level {maquina1.Level}");
-            Console.WriteLine($"{maquina1.Name} gera {maquina1.Multiplier}");
+            foreach(var x in maquinas)
+            {
+                Console.WriteLine($"{x.Name} gera {x.Multiplier}");
+            }
 
-            Console.WriteLine($"0 - Gerar {Gerando}");
+            Console.WriteLine($"\n\n0 - Gerar {Gerando}");
             Console.WriteLine($"1 - Menu ");
             Console.WriteLine($"3 - SAIR ");
 
@@ -36,27 +45,30 @@ public class World
                 break;
 
                 case ConsoleKey.D1:
-                    Console.WriteLine($"Escolha uma maquina: ");
-                    Console.WriteLine($"1 - {maquina1.Name} LEVEL {maquina1.Level + 1}   ${maquina1.Price}");
-                    //int EscolhaMaquinas = int.Parse(Console.ReadLine());
-                    switch(Console.ReadKey().Key)
+                    Console.WriteLine($"\n\nEscolha uma maquina: \n\n");
+                    
+                    int indexMaq=1;
+                    foreach(var x in maquinas)
                     {
-                        case ConsoleKey.D1:
-                            if (Money < maquina1.Price)
-                                Console.WriteLine($"Dinheiro insuficiente\nFalta ${maquina1.Price - Money}");
-                            else
-                            {
-                                Money -= maquina1.Price;
-                                maquina1.Level++;
-                            }
-
-                        break;
+                        Console.WriteLine($"{indexMaq} - {x.Name} LEVEL {x.Level + 1}   ${x.Price}");
+                        indexMaq++;
                     }
 
+                    Console.WriteLine($"0 - SAIR do menu");
+
+                    int escolha = (int.Parse(Console.ReadLine())-1);
+
+                    if (Money < maquinas[escolha].Price)
+                        Console.WriteLine($"\n\nDinheiro insuficiente\nFalta ${maquinas[escolha].Price - Money}");
+                    else
+                    {
+                        Money -= maquinas[escolha].Price;
+                        maquinas[escolha].Level++;
+                        Console.WriteLine($"\n\n{maquinas[escolha].Name} nivel  {maquinas[escolha].Level}");
+
+                    }
+                    System.Threading.Thread.Sleep(delay); 
                 break;
-
-
-
             }
         }
     }
