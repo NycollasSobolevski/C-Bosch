@@ -1,16 +1,21 @@
 public class Animals
 {
-    public string Name{get;set;}
-    public string Type{get;set;}
-    public void Type(string Type)
+    private string Name{get;set;}
+    private string Type{get;set;}
+
+    public Animals(string Nome, string Type)
     {
-        if (Type == "cachorro")
-            return "cachorro";
-        else if (Type == "gato")
-            return "gato";
-        else if (Type == "peixe")
-            return "peixe";
+        this.Name = Nome;
+        if(Type != "cachorro" && Type != "peixe" && Type != "gato" )
+            this.Type = "peixe";
         else
-            return "peixe";
+            this.Type = Type;
+    }
+
+    public Animals(){}
+
+    public void MostrarDados()
+    {
+        Console.WriteLine($"Nome: {this.Name}\nTipo: {this.Type}");
     }
 }
