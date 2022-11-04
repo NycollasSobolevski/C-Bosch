@@ -16,4 +16,24 @@ public class Livro
         int porcentagem = (lidas*100) / paginas;
         Console.WriteLine($"Voce ja leu {porcentagem}% do livro.");
     }
+    public string getTitulo()
+    {
+        return $"{this.Titulo}";
+    }
+    public string getQtdPaginas()
+    {
+        return $"{this.QtdPaginas}";
+    }
+    public void setTitulo(string titulo)
+    {
+        this.Titulo = titulo;
+    }
+    public void setQtdPaginas(int quantidade)
+    {
+        this.QtdPaginas = quantidade;
+    }
+    public void setPaginasLidas(int quantidade)
+    {
+        this.PaginasLidas = quantidade;
+    }
 }
