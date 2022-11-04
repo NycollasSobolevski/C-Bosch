@@ -1,19 +1,57 @@
-﻿var coll = "LAB_PR_COV.csv"
-    .Open()
-    .Skip(1)
-    .Take(1000)
-    .ToList();
+// var coll = "LAB_PR_COV.csv"
+//     .Open()
+//     .Skip(1)
+//     .Take(1000)
+//     .ToList();
 
 
-var contains = "ola mundo".Contains("mundo");
+// MeuDelegate print = Console.WriteLine;
+// print("hello world");
+// MeuDelegate2 sqrt = Math.Sqrt;
+// var y = sqrt(9.0);
 
-foreach(var x in coll)
-{
-    Console.WriteLine(x);
-}
+
+// var contains = "ola mundo".Contains("mundo");
+
+// foreach(var x in coll)
+// {
+//     Console.WriteLine(x);
+// }
+
+
+
+
 
 public static class MyExtensionMethods
 {
+    
+    public static IEnumerable<R> Max<T, R>(this IEnumerable<T> coll, Func<T, int> func)
+    {
+        var it = coll.GetEnumerator();
+        IEnumerable<T> maior;
+        while(it.MoveNext())
+        {
+            
+        }
+    }
+
+    public static IEnumerable<R> Select<T, R>(this IEnumerable<T> coll, Func<T, R> func)
+    {
+        var it = coll.GetEnumerator();
+        while (it.MoveNext())
+            yield return func(it.Current);
+    }
+
+    public static IEnumerable<T> Where<T>(this IEnumerable<T> coll, Func<T, bool> condition)
+    {
+        var it = coll.GetEnumerator();
+        while(it.MoveNext())
+        {
+            if(condition(it.Current))
+                yield return it.Current;
+        }
+    }
+
     public static IEnumerable<T> Skip<T>(this IEnumerable<T> coll, int n)
     {
         var it = coll.GetEnumerator();
