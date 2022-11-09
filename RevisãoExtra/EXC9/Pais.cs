@@ -4,7 +4,7 @@ public class Pais
     public string Name{get;set;}
     public int Pop{get;set;}
     public int Dim{get;set;}
-    List<Pais> Fronteira = new List<Pais>();
+    public List<Pais> Fronteira = new List<Pais>();
     
     public Pais(string codeISO, string nome, int dimensao, int populacao)
     {
@@ -20,25 +20,26 @@ public class Pais
     }
 
 
-    public void Limitrofe(Pais pais)
+    public string Limitrofe(Pais pais)
     {
         foreach(var x in Fronteira)
         {
             if (x.Code == pais.Code)
                 return $"{pais.Name} faz fronteira com {this.Name}";
         }
+        return null;
     }
 
-    public void Densidade() => this.Pop / this.Dim;
+    public string Densidade() => $"Densidade demografica de {this.Pop / this.Dim} habitantes por KM²";
 
-    public void VizinhosComum(Pais pais)
+    public List<Pais> VizinhosComum(Pais pais)
     {
         List<Pais> lista = new List<Pais>();
         foreach(var x in pais.Fronteira)
         {
             foreach(var y in this.Fronteira)
             {
-                if (x == y )
+                if (x.Code == y.Code)
                 {
                     lista.Add(x);
                 }
